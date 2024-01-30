@@ -1,0 +1,59 @@
+1. npm i json-server
+Tambien ponemos npm init -y si lo estuvieramos subiendo a github tendriamos que poner un archivo mas que es gitignore y dentro
+de ese archivo poner node_modules
+2. Creamos un archivo llamamos db.json
+y el comando npx json-sevrer db.json
+3. Lo iniciaremos en un servidor https://localhost:3000 y JSON crea automaticamente endpoitns
+(puntos finales HTTP)
+http://localhost:3000/users?name=Eliana
+4. Posibilita la realizaciion de operaciones CRUD (crear, leer, actualizar,eliminar)
+5. Se pueden realizar solicitudes GET, POST, PUT PATH o DELETE
+6. Una solicitud POST, PUT o PATH debe incluir un encabezado
+ /*****************************************************************************/
+ "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1", esto tb se cambia a jest cuando hacemos los test
+    "api": "npx json-server server/db.json"
+  },
+
+  Esto se agrega al script del package.json debajo de "test", le damos el nombre q queremos 
+  y despues copiamos el npx de la ruta para no tener que llamarla continuamente en la terminal.
+  
+  se llama de esta manera: npm run api(que es el nombre q le hemos puesto a la ruta)
+
+  para poder enviar otro usuario por ejemplo se va a la opcion body y le damos a raw y formato json
+  y creo el usuario ahi.
+  {
+    "name": "Eliana",
+    "email": "pepa@pepa.com"
+}
+Si quieres poner una nueva propiedad hay q crearlo desde el back, (Es decir, desde el documento db.json)
+
+con PUT te actualiza algo concreto pero hay q escribir todas las propiedades porque si no te las borra, aquí 
+todas ej: id, name, email
+con PATH no hace falta escribir todas las propiedades, solo le pongo la que quiero modificar ej: email 
+y ya esta
+
+las peticiones se hacen desde el fronted(GET(nos muestra la info), POST(crear o añade info), PUT, PATCH(cambia los elementos q necesitamos))
+ y las respuestas llegan del backend(las respuestas tienen status 200 - body)
+
+ CRUD 
+ C -> GET
+ R -> POST
+ U -> PATCH - PUT
+ D -> DELETE
+
+ Metodo fetch() es un metodo de js q esta dentro del navegador q nos permite hacer las llamadas desde Js
+que recibe peticiones, de una URL o el endpoint y se le pone el metodo por defecto si no se especifica es 
+un GET
+
+
+metodo map() -> recorre los elementos es como un for each 
+ej:
+const array1 = [1, 4, 9, 16];
+
+// Pass a function to map
+const map1 = array1.map((x) => x * 2);
+
+console.log(map1);
+// Expected output: Array [2, 8, 18, 32]
+ para recorrer las apis o hacer peticiones es mejor recorrerlo con map()
