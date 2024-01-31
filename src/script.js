@@ -6,7 +6,7 @@ let booksList;
 document.addEventListener('DOMContentLoaded', () => {
     // Al cargar el DOM, se llama a la función printBooks para mostrar la información inicial.
     printBooks();
-    
+
     popUpSection = document.getElementById("popUpForm");
 });
 
@@ -102,6 +102,11 @@ async function createBook() {
     const titleInput = document.getElementById("title").value;
     const authorInput = document.getElementById("author").value;
 
+// Validar si el título está vacío
+if (titleInput === '') {
+    alert('Por favor, completa el campo "Título".');
+    return; // Detener la función si el está vacío
+}
     try {
         const result = await fetch("http://localhost:3000/books", {
             method: "POST",

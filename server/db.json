@@ -1,11 +1,6 @@
 {
   "books": [
     {
-      "id": "05da",
-      "title": "Cien años de soledad",
-      "author": "Gabriel García Márquez"
-    },
-    {
       "id": "72cf",
       "title": "Harry Potter y el legado maldito",
       "author": "J.K. Rowling"

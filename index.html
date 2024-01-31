@@ -4,29 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href=".//src/styles.css">
+    <link rel="stylesheet" href="./src/styles.css">
     <title>API libros</title>
 </head>
 
 <body>
-    <h2 class="header">Bienvenidos a tu lista de libros favoritos</h2>
+
+    <h2 class="header">Cartera personal de libros favoritos y recomendados</h2>
+
+    <section id="underHeader">
+        <div class="agregarTitle"><h3>Para actualizar tu cartera de libros con tus títulos favoritos y recomendados, añádelos
+            en el formulario y haz click en "Agregar libro".</h3></div><img src="./src/img/mel-poole-odn_YbZyc28-unsplash.jpg" class=pic1
+            alt="cartera de cuero con libros">
+    </section>
+
+    <form id="books-form">
+
+        <label for="title">Título:</label><input type="text" id="title" placeholder="Introduce aquí el título">
+        <div id="titleError"></div><!-- Elemento para mostrar la alerta -->
+        <label for="author">Autor:</label><input type="text" id="author" placeholder="Introduce aquí el autor">
+    </form>
+
+
+    <button type="submit" class="cargar" onclick="printBooks()">Cargar info</button>
+    <button onclick="createBook()" class="agregarButton">Agregar libro</button>
+    <h3 class="editaElimina">Edita y elimina cualquier libro de tu lista.</h3>
+    <hr></hr>
     <section id="popUpForm">
         <!--Aquí aparecerá un formulario para modificar los datos de la base de datos-->
     </section>
-    <h3>Añade tus libros recomendados con el botón "Agregar". Edita y elimina libros para actualizar tu lista.</h3>
-    <form id="books-form">
 
-        <label for="id">ID:</label><input type="id" id="id">
-        <label for="title">Título:</label><input type="text" id="title" placeholder="Introduce aquí el título">
-        <label for="author">Autor:</label><input type="text" id="author" placeholder="Introduce aquí el autor">
-    </form>
-    
-    <button type="submit" class="cargar" onclick="printBooks()">Cargar info</button>
-    <button onclick="createBook()">Agregar</button>
     <section id="books-list">
         <!--Aquí se mostrarán los datos de la base de datos-->
     </section>
-     
+
 
     <script src="./src/script.js"></script>
 

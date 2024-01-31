@@ -57,3 +57,7 @@ const map1 = array1.map((x) => x * 2);
 console.log(map1);
 // Expected output: Array [2, 8, 18, 32]
  para recorrer las apis o hacer peticiones es mejor recorrerlo con map()
+
+ FOTOGRAFIAS:
+ foto de Foto de Mel Poole en Unsplash <a href="https://unsplash.com/es/@melpoole?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Mel Poole</a> en <a href="https://unsplash.com/es/fotos/cartera-de-cuero-rojo-sobre-mesa-blanca-odn_YbZyc28?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+  
