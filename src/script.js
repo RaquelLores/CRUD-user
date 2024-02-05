@@ -2,7 +2,7 @@
 let popUpSection;
 let booksList;
 
-// Este evento se activa cuando el DOM ha sido completamente cargado.
+    // Este evento se activa cuando el DOM ha sido completamente cargado.
 document.addEventListener('DOMContentLoaded', () => {
     // Al cargar el DOM, se llama a la función printBooks para mostrar la información inicial.
     printBooks();
@@ -52,7 +52,7 @@ async function modifyBook(id, originalTitle, originalAuthor) {
         const result = await fetch(`http://localhost:3000/books/${id}`, {
             method: "PUT",
             headers: { "Content-type": "application/json" },
-            body: JSON.stringify({ title: encodeURIComponent(modifyTitleInput), author: encodeURIComponent(modifyAuthorInput) })
+            body: JSON.stringify({ title: modifyTitleInput, author: modifyAuthorInput })
         });
 
         if (result.ok) {
@@ -73,6 +73,7 @@ async function modifyBook(id, originalTitle, originalAuthor) {
         document.getElementById("modify-author").value = originalAuthor;
     }
 }
+
 
 function hidePopUpForm() {
     // Limpiar la sección de formulario de edición después de guardar los cambios.
@@ -102,11 +103,11 @@ async function createBook() {
     const titleInput = document.getElementById("title").value;
     const authorInput = document.getElementById("author").value;
 
-// Validar si el título está vacío
-if (titleInput === '') {
-    alert('Por favor, completa el campo "Título".');
-    return; // Detener la función si el está vacío
-}
+    // Validar si el título está vacío
+    if (titleInput === '') {
+        alert('Por favor, completa el campo "Título".');
+        return; // Detener la función si el está vacío
+    }
     try {
         const result = await fetch("http://localhost:3000/books", {
             method: "POST",
